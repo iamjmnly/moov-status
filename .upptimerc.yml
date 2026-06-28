@@ -1,31 +1,44 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Upptime configuration for Moov In Checklist
+# Copy this file to the ROOT of your new Upptime repo (created from
+# https://github.com/upptime/upptime via "Use this template").
+#
+# After committing, GitHub Actions will start running checks every ~5 min
+# and publish the status page to GitHub Pages.
+
+owner: iamjmnly
+repo: moov-status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
+  - name: Homepage
+    url: https://themoveinchecklist.com
+  - name: Auth
+    url: https://themoveinchecklist.com/auth
+  - name: Pricing
+    url: https://themoveinchecklist.com/pricing
+  - name: Support
+    url: https://themoveinchecklist.com/support
+  - name: Payments webhook
+    url: https://themoveinchecklist.com/api/public/payments/webhook
+    method: GET
+    # Webhook only accepts signed POSTs; treat 401/405 as "up".
+    expectedStatusCodes:
+      - 200
+      - 401
+      - 405
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.themoveinchecklist.com   # remove this line if not using a custom subdomain
+  name: Moov In Checklist Status
+  introTitle: "Moov In Checklist Status"
+  introMessage: "Live uptime and response-time monitoring for themoveinchecklist.com."
   navbar:
     - title: Status
       href: /
     - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+      href: https://github.com/YOUR_GITHUB_USERNAME/moov-status
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+assignees:
+  - iamjmnly
+
+# Open a GitHub issue automatically when a site goes down
+notifications: []
